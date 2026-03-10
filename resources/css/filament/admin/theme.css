@@ -1,0 +1,436 @@
+/* ---- Google Font: Inter ---- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base Filament styles — relative path so Vite resolves correctly */
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+/* =============================================
+   SWIFT ERP — Custom Filament Theme
+   Tailwind v4 + Custom Properties
+   ============================================= */
+
+@theme {
+    --color-primary-50: #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-200: #bfdbfe;
+    --color-primary-300: #93c5fd;
+    --color-primary-400: #60a5fa;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #2563eb;
+    --color-primary-700: #1d4ed8;
+    --color-primary-800: #1e40af;
+    --color-primary-900: #1e3a8a;
+    --color-primary-950: #172554;
+
+    --font-family-sans: 'Inter', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ---- Google Font: Inter ---- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* =============================================
+   TOP BAR / NAVIGATION
+   ============================================= */
+.fi-topbar {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+    backdrop-filter: blur(16px) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Brand logo area */
+.fi-logo {
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    letter-spacing: -0.02em !important;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Top bar icon buttons */
+.fi-topbar button,
+.fi-topbar a {
+    transition: all 0.2s ease !important;
+}
+
+.fi-topbar .fi-icon-btn {
+    border-radius: 0.5rem !important;
+    padding: 0.5rem !important;
+}
+
+.fi-topbar .fi-icon-btn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* User avatar area */
+.fi-user-avatar {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* =============================================
+   SIDEBAR NAVIGATION
+   ============================================= */
+.fi-sidebar {
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.fi-sidebar-nav-groups {
+    padding: 0.75rem !important;
+}
+
+/* Nav group label */
+.fi-sidebar-group-label {
+    color: rgba(148, 163, 184, 0.7) !important;
+    font-size: 0.65rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    padding: 0.25rem 0.5rem !important;
+    margin-top: 0.5rem !important;
+}
+
+/* Nav item */
+.fi-sidebar-item-button {
+    border-radius: 0.625rem !important;
+    transition: all 0.2s ease !important;
+    font-size: 0.875rem !important;
+    color: rgba(203, 213, 225, 0.85) !important;
+    font-weight: 450 !important;
+    margin-bottom: 0.125rem !important;
+}
+
+.fi-sidebar-item-button:hover {
+    background: rgba(255, 255, 255, 0.07) !important;
+    color: #f1f5f9 !important;
+    transform: translateX(2px) !important;
+}
+
+/* Active nav item */
+.fi-sidebar-item-button.fi-active,
+.fi-sidebar-item-button[aria-current] {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(99, 102, 241, 0.2)) !important;
+    color: #93c5fd !important;
+    font-weight: 600 !important;
+    box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.3) !important;
+}
+
+/* Nav icon */
+.fi-sidebar-item-icon {
+    color: inherit !important;
+}
+
+/* =============================================
+   MAIN CONTENT AREA
+   ============================================= */
+.fi-main {
+    background: #0f172a !important;
+}
+
+.fi-main-ctn {
+    background: #0f172a !important;
+}
+
+/* =============================================
+   PAGE HEADER
+   ============================================= */
+.fi-header {
+    background: transparent !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.fi-page-header-heading {
+    font-size: 1.375rem !important;
+    font-weight: 700 !important;
+    color: #f1f5f9 !important;
+    letter-spacing: -0.025em !important;
+}
+
+/* =============================================
+   CARDS / SECTIONS
+   ============================================= */
+.fi-section,
+.fi-card {
+    background: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+    transition: box-shadow 0.2s ease !important;
+}
+
+.fi-section:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Section header */
+.fi-section-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    padding-bottom: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.fi-section-header-heading {
+    font-weight: 600 !important;
+    color: #e2e8f0 !important;
+    font-size: 0.9375rem !important;
+}
+
+/* =============================================
+   TABLES
+   ============================================= */
+.fi-ta-ctn,
+.fi-table-ctn {
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+    background: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Table header */
+.fi-ta table thead tr th {
+    background: #263347 !important;
+    color: rgba(148, 163, 184, 0.9) !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    padding: 0.875rem 1rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+/* Table rows */
+.fi-ta table tbody tr {
+    transition: background 0.15s ease !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+.fi-ta table tbody tr:hover {
+    background: rgba(59, 130, 246, 0.05) !important;
+}
+
+.fi-ta table tbody tr td {
+    color: #cbd5e1 !important;
+    padding: 0.875rem 1rem !important;
+    font-size: 0.875rem !important;
+}
+
+/* =============================================
+   SKELETON LOADING
+   ============================================= */
+.fi-ta-skeleton,
+[data-loading] .fi-ta table tbody tr td {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-ta-skeleton::after,
+[data-loading] .fi-ta table tbody tr td::after {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(90deg,
+            rgba(51, 65, 85, 0) 0%,
+            rgba(100, 116, 139, 0.3) 50%,
+            rgba(51, 65, 85, 0) 100%) !important;
+    animation: skeleton-shimmer 1.6s infinite !important;
+}
+
+@keyframes skeleton-shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Skeleton pulse for placeholders */
+.fi-ta-empty-state,
+.animate-pulse {
+    background: linear-gradient(90deg,
+            #1e293b 25%,
+            #263347 50%,
+            #1e293b 75%) !important;
+    background-size: 200% 100% !important;
+    animation: skeleton-pulse 1.8s ease-in-out infinite !important;
+}
+
+@keyframes skeleton-pulse {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* =============================================
+   WIDGETS / STAT CARDS
+   ============================================= */
+.fi-wi-stats-overview-stat {
+    background: linear-gradient(135deg, #1e293b, #263347) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.fi-wi-stats-overview-stat::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6) !important;
+}
+
+.fi-wi-stats-overview-stat:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+.fi-wi-stats-overview-stat-value {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #f1f5f9 !important;
+    letter-spacing: -0.025em !important;
+}
+
+.fi-wi-stats-overview-stat-label {
+    font-size: 0.8125rem !important;
+    color: rgba(148, 163, 184, 0.85) !important;
+    font-weight: 500 !important;
+}
+
+/* =============================================
+   CHART WIDGET
+   ============================================= */
+.fi-wi-chart {
+    background: linear-gradient(135deg, #1e293b, #263347) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* =============================================
+   FORMS
+   ============================================= */
+.fi-input {
+    background: #263347 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #e2e8f0 !important;
+    border-radius: 0.625rem !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.fi-input:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15) !important;
+}
+
+.fi-label label {
+    color: #94a3b8 !important;
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.fi-btn-primary {
+    background: linear-gradient(135deg, #3b82f6, #6366f1) !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3) !important;
+    border-radius: 0.625rem !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+
+.fi-btn-primary:hover {
+    background: linear-gradient(135deg, #2563eb, #4f46e5) !important;
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* =============================================
+   BADGES
+   ============================================= */
+.fi-badge {
+    border-radius: 9999px !important;
+    font-weight: 600 !important;
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.6rem !important;
+    letter-spacing: 0.025em !important;
+}
+
+/* =============================================
+   MODALS
+   ============================================= */
+.fi-modal-content {
+    background: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 1.25rem !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5) !important;
+}
+
+.fi-modal-heading {
+    color: #f1f5f9 !important;
+    font-weight: 700 !important;
+}
+
+/* =============================================
+   NOTIFICATIONS
+   ============================================= */
+.fi-notification {
+    border-radius: 0.875rem !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* =============================================
+   DROPDOWNS
+   ============================================= */
+.fi-dropdown-panel {
+    background: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0.875rem !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+.fi-dropdown-list-item-label {
+    color: #cbd5e1 !important;
+    font-size: 0.875rem !important;
+}
+
+.fi-dropdown-list-item-button:hover {
+    background: rgba(255, 255, 255, 0.07) !important;
+}
+
+/* =============================================
+   SCROLLBAR
+   ============================================= */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
