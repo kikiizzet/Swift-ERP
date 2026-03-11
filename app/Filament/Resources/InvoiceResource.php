@@ -164,7 +164,7 @@ class InvoiceResource extends Resource
                         Notification::make()->title('Invoice terkirim!')->success()->send();
                     }),
 
-                // Catat pembayaran
+                // Catat pembayarann
                 Tables\Actions\Action::make('pay')
                     ->label('Catat Pembayaran')
                     ->icon('heroicon-o-banknotes')
