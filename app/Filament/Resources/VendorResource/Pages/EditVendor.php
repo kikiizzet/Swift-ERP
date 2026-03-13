@@ -6,3 +6,4 @@ class EditVendor extends EditRecord {
     protected static string $resource = VendorResource::class;
     protected function getHeaderActions(): array { return [Actions\DeleteAction::make()]; }
 }
+//feat: tambah fitur kecil
