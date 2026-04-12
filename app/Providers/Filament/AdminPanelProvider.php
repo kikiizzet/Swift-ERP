@@ -45,7 +45,7 @@ class AdminPanelProvider extends PanelProvider
                 NavigationGroup::make('Pembelian'),
                 NavigationGroup::make('Inventaris'),
                 NavigationGroup::make('Akuntansi'),
-                NavigationGroup::make('Karyawan'),
+                NavigationGroup::make('HRIS'),
                 NavigationGroup::make('Master Data'),
                 NavigationGroup::make('Pengaturan'),
             ])

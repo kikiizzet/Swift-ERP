@@ -8,6 +8,17 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Employee extends Model
 {
+    protected static function booted()
+    {
+        static::creating(function ($employee) {
+            if (empty($employee->employee_number)) {
+                $lastEmployee = static::orderBy('id', 'desc')->first();
+                $lastNumber   = $lastEmployee ? (int) str_replace('EMP-', '', $lastEmployee->employee_number) : 0;
+                $employee->employee_number = 'EMP-' . str_pad($lastNumber + 1, 5, '0', STR_PAD_LEFT);
+            }
+        });
+    }
+
     protected $fillable = [
         'user_id', 'employee_number', 'name', 'email', 'phone',
         'department_id', 'job_position_id', 'manager_id',

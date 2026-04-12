@@ -10,7 +10,7 @@ class StockMovement extends Model
     protected $fillable = [
         'product_id', 'variant_id', 'type', 'reference_type', 'reference_id',
         'quantity', 'quantity_before', 'quantity_after', 'unit_cost',
-        'warehouse', 'notes', 'created_by',
+        'warehouse', 'warehouse_id', 'notes', 'created_by',
     ];
 
     protected $casts = [
@@ -35,6 +35,11 @@ class StockMovement extends Model
         return $this->belongsTo(User::class, 'created_by');
     }
 
+    public function warehouse_rel(): BelongsTo
+    {
+        return $this->belongsTo(Warehouse::class, 'warehouse_id');
+    }
+
     /**
      * Catat pergerakan stok dan update kuantitas produk secara otomatis.
      */
@@ -46,6 +51,7 @@ class StockMovement extends Model
         ?string $refType = null,
         ?int $refId = null,
         string $warehouse = 'Gudang Utama',
+        ?int $warehouseId = null,
     ): self {
         $before = (float) $product->stock_quantity;
         $after = $type === 'in' ? $before + $quantity : $before - abs($quantity);
@@ -59,6 +65,7 @@ class StockMovement extends Model
             'reference_type'   => $refType,
             'reference_id'     => $refId,
             'warehouse'        => $warehouse,
+            'warehouse_id'     => $warehouseId,
             'notes'            => $notes,
             'created_by'       => auth()->id(),
         ]);

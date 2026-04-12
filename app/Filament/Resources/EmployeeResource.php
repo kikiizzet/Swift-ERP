@@ -14,7 +14,7 @@ class EmployeeResource extends Resource
 {
     protected static ?string $model = Employee::class;
     protected static ?string $navigationIcon = 'heroicon-o-identification';
-    protected static ?string $navigationGroup = 'Karyawan';
+    protected static ?string $navigationGroup = 'HRIS';
     protected static ?string $modelLabel = 'Karyawan';
     protected static ?string $pluralModelLabel = 'Karyawan';
     protected static ?int $navigationSort = 1;
@@ -60,12 +60,27 @@ class EmployeeResource extends Resource
                     ->label('Departemen')
                     ->relationship('department', 'name')
                     ->searchable()
-                    ->preload(),
+                    ->preload()
+                    ->live(),
                 Forms\Components\Select::make('job_position_id')
                     ->label('Jabatan')
-                    ->relationship('jobPosition', 'name')
+                    ->relationship(
+                        'jobPosition',
+                        'name',
+                        fn (Forms\Get $get, \Illuminate\Database\Eloquent\Builder $query) => 
+                            $query->when($get('department_id'), fn($q) => $q->where('department_id', $get('department_id')))
+                    )
                     ->searchable()
-                    ->preload(),
+                    ->preload()
+                    ->createOptionForm([
+                        Forms\Components\TextInput::make('name')
+                            ->label('Nama Jabatan')
+                            ->required(),
+                        Forms\Components\Select::make('department_id')
+                            ->label('Departemen')
+                            ->relationship('department', 'name')
+                            ->default(fn(Forms\Get $get) => $get('../../department_id')),
+                    ]),
                 Forms\Components\Select::make('status')
                     ->label('Status Kepegawaian')
                     ->options([
