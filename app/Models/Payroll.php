@@ -12,6 +12,7 @@ class Payroll extends Model
         'total_deductions', 'net_salary', 'status', 'components', 'pay_date', 'created_by',
     ];
 
+    //cast format
     protected $casts = [
         'basic_salary'      => 'decimal:2',
         'total_allowances'  => 'decimal:2',
