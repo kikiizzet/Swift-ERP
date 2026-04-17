@@ -42,6 +42,7 @@ class StockMovement extends Model
 
     /**
      * Catat pergerakan stok dan update kuantitas produk secara otomatis.
+     * product: model produk yang stoknya berubah
      */
     public static function record(
         Product $product,
