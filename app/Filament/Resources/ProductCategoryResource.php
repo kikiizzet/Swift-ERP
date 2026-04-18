@@ -25,10 +25,19 @@ class ProductCategoryResource extends Resource
             Forms\Components\TextInput::make('name')
                 ->label('Nama Kategori')
                 ->required()
-                ->maxLength(100),
+                ->maxLength(100)
+                ->live(onBlur: true)
+                ->afterStateUpdated(fn (Forms\Set $set, ?string $state) => $set('slug', \Illuminate\Support\Str::slug($state))),
+            Forms\Components\TextInput::make('slug')
+                ->label('Slug')
+                ->required()
+                ->unique(ignoreRecord: true)
+                ->maxLength(150)
+                ->dehydrated(true),
             Forms\Components\Textarea::make('description')
                 ->label('Deskripsi')
-                ->rows(3),
+                ->rows(3)
+                ->columnSpanFull(),
         ]);
     }
 
