@@ -13,6 +13,8 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class ErpStatsOverview extends BaseWidget
 {
+    protected static bool $isLazy = true;
+
     protected static ?int $sort = 1;
 
     protected function getStats(): array

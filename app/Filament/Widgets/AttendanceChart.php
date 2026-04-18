@@ -10,7 +10,8 @@ use Carbon\Carbon;
 
 class AttendanceChart extends ChartWidget
 {
-    protected static ?string $heading = 'Weekly Work Hours';
+    protected static bool $isLazy = true;
+    protected static ?string $heading = 'Trend Kehadiran (7 Hari Terakhir)';
     protected static ?string $maxHeight = '200px';
 
     protected function getData(): array

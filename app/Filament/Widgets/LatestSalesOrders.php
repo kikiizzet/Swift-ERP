@@ -9,6 +9,8 @@ use Filament\Widgets\TableWidget as BaseWidget;
 
 class LatestSalesOrders extends BaseWidget
 {
+    protected static bool $isLazy = true;
+
     protected static ?int $sort = 2;
     protected int|string|array $columnSpan = 'full';
     protected static ?string $heading = 'Sales Order Terbaru';

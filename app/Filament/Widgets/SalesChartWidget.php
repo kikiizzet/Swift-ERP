@@ -8,6 +8,8 @@ use Illuminate\Support\Carbon;
 
 class SalesChartWidget extends ChartWidget
 {
+    protected static bool $isLazy = true;
+
     protected static ?int $sort = 0;
     protected static ?string $heading = 'Grafik Penjualan 6 Bulan Terakhir';
     protected static ?string $maxHeight = '250px';

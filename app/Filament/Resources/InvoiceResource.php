@@ -210,6 +210,13 @@ class InvoiceResource extends Resource
                             ->send();
                     }),
 
+                Tables\Actions\Action::make('print')
+                    ->label('Cetak Invoice')
+                    ->icon('heroicon-o-printer')
+                    ->color('gray')
+                    ->url(fn (Invoice $record): string => route('admin.invoices.print', $record))
+                    ->openUrlInNewTab(),
+
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([

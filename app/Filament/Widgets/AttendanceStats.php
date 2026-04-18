@@ -10,6 +10,8 @@ use Carbon\Carbon;
 
 class AttendanceStats extends BaseWidget
 {
+    protected static bool $isLazy = true;
+
     protected function getStats(): array
     {
         $employee = Auth::user()->employee;
