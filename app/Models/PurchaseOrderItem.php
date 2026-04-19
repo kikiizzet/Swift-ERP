@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\StockMovement;
 
 class PurchaseOrderItem extends Model
 {
@@ -26,6 +27,19 @@ class PurchaseOrderItem extends Model
         static::saving(function ($item) {
             $base = (float) $item->quantity * (float) $item->unit_price;
             $item->subtotal = round($base + ($base * ((float) ($item->tax_percent ?? 0) / 100)), 2);
+        });
+
+        static::created(function ($item) {
+            if ($item->product && $item->product->type === 'storable') {
+                StockMovement::record(
+                    $item->product,
+                    'in',
+                    $item->quantity,
+                    'Pembelian (Purchase Order #' . ($item->purchaseOrder->number ?? '-') . ')',
+                    'purchase_order',
+                    $item->purchase_order_id
+                );
+            }
         });
     }
 

@@ -24,6 +24,12 @@ class ProductResource extends Resource
     {
         return $form->schema([
             Forms\Components\Section::make('Informasi Produk')->schema([
+                Forms\Components\FileUpload::make('image')
+                    ->label('Foto Produk')
+                    ->image()
+                    ->disk('public')
+                    ->directory('product-images')
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('name')
                     ->label('Nama Produk')
                     ->required()
@@ -83,6 +89,10 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('image')
+                    ->label('Foto')
+                    ->disk('public')
+                    ->circular(),
                 Tables\Columns\TextColumn::make('sku')
                     ->label('SKU')
                     ->searchable()
