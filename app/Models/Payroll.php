@@ -26,7 +26,7 @@ class Payroll extends Model
     public function createdBy(): BelongsTo { return $this->belongsTo(User::class, 'created_by'); }
 
     /**
-     * Hitung gaji bersih otomatis.
+     * Hitung gaji bersih otomatis
      */
     public function calculateNetSalary(): static
     {
