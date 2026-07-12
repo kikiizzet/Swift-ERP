@@ -10,7 +10,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Buat User Admin awalan
+        // Buat User Admin awalana
         User::firstOrCreate(
             ['email' => 'admin@swift-erp.local'],
             [
