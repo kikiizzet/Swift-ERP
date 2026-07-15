@@ -12,7 +12,6 @@ class Payroll extends Model
         'total_deductions', 'net_salary', 'status', 'components', 'pay_date', 'created_by',
     ];
 
-    //cast format
     protected $casts = [
         'basic_salary'      => 'decimal:2',
         'total_allowances'  => 'decimal:2',
@@ -25,12 +24,10 @@ class Payroll extends Model
     public function employee(): BelongsTo { return $this->belongsTo(Employee::class); }
     public function createdBy(): BelongsTo { return $this->belongsTo(User::class, 'created_by'); }
 
-    /**
-     * Hitung gaji bersih otomatis
-     */
     public function calculateNetSalary(): static
     {
         $this->net_salary = $this->basic_salary + $this->total_allowances - $this->total_deductions;
         return $this;
     }
+    //console
 }
