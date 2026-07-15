@@ -20,7 +20,7 @@ class CompanySeeder extends Seeder
             ]
         );
 
-        // Hubungkan admin ke perusahaan
+        // Hubungkan admin ke perusahaan1
         $admin = User::where('email', 'admin@swift-erp.local')->first();
         if ($admin) {
             $company->users()->syncWithoutDetaching([$admin->id]);
