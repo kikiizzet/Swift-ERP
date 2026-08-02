@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Vendor extends Model
 {
     use HasFactory;
-//    protected $table = 'vendors';
+//    protected $table = 'vendor' ;
+// 
     protected $fillable = [
         'name', 'email', 'phone', 'address', 'tax_number', 'currency', 'is_active',
     ];
@@ -28,3 +29,4 @@ class Vendor extends Model
         return $this->hasMany(VendorBill::class);
     }
 }
+//fillable
