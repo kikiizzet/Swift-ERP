@@ -29,5 +29,5 @@ class Payroll extends Model
         $this->net_salary = $this->basic_salary + $this->total_allowances - $this->total_deductions;
         return $this;
     }
-    //console add payroll automation
+    //console add payroll automations
 }
