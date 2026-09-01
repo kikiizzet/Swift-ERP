@@ -23,11 +23,13 @@ class Payroll extends Model
 
     public function employee(): BelongsTo { return $this->belongsTo(Employee::class); }
     public function createdBy(): BelongsTo { return $this->belongsTo(User::class, 'created_by'); }
-
+    
+    public function scopeApproved($query) { return $query->where('status', 'approved'); }
+       
     public function calculateNetSalary(): static
     {
         $this->net_salary = $this->basic_salary + $this->total_allowances - $this->total_deductions;
         return $this;
     }
-    //console add payroll automations
+    //console add payroll automationss
 }
